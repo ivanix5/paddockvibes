@@ -1,0 +1,67 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paddock Vibes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="images/browsericon.ico" />
+  <script src="classifiche.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Logo Paddock Vibes" class="logo click-logo" id="logo"  />
+    <nav>
+      <ul>
+        <li><a href="#">Radio Box</a></li>
+        <li><a href="#">Classifiche</a></li>
+        <li><a href="#">Pagelle GP</a></li>
+        <li><a href="#">Collaborazioni</a></li>
+        <li><a href="#">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<main>
+    <section class="classifiche-slider">
+      <h1>Classifiche Campionato</h1>
+
+      <!-- Tabs -->
+      <div class="slider-tabs">
+        <button class="tab active" onclick="showTab('piloti', event)">PILOTI</button>
+        <button class="tab" onclick="showTab('costruttori', event)">COSTRUTTORI</button>
+
+      </div>
+
+      <!-- Contenuto -->
+      <div class="slider-content">
+        <div id="piloti" class="tab-content active">
+          <ul class="ranking-list">
+            <!-- Classifica piloti caricata via JS/API -->
+          </ul>
+        </div>
+        <div id="costruttori" class="tab-content">
+          <ul class="ranking-list">
+            <!-- Classifica costruttori caricata via JS/API -->
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    
+
+
+  <section class="socials">
+    <h2>I nostri social</h2>
+    <div class="icons">
+      <a href="https://www.facebook.com/698880953314177?ref=pl_edit_xav_ig_profile_page_web"><img src="images/socialnetwork/facebook.png" alt="Facebook" /></a>
+      <a href="https://www.instagram.com/paddockvibesofficial/"><img src="images/socialnetwork/instagram.png" alt="Instagram" /></a>
+      <a href="https://www.threads.com/@paddockvibesofficial"><img src="images/socialnetwork/threads.png" alt="Threads" /></a>
+      <a href="https://www.tiktok.com/@paddockvibesofficial"><img src="images/socialnetwork/tiktok.png" alt="TikTok" /></a>
+    </div>
+  </section>
+</body>
+</html>

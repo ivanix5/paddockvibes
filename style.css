@@ -1,0 +1,459 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Rohn Rounded', sans-serif;
+  font-weight: 400;
+  background: #0d0d0d;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+h1 {
+  font-weight: 900; /* Black */
+}
+
+.race-week h1 {
+  margin-bottom: -30px;
+  margin-top: 30px;
+}
+
+
+h2 {
+  font-weight: 750; /* Medium */
+}
+
+h3 {
+  font-weight: 500; /* Medium */
+}
+
+p {
+  font-weight: 400; /* Regular */
+}
+
+.race-red {
+  color: #FF0000;
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+.race-white {
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+
+.countdown-content p:last-child {
+  font-weight: 800; /* Heavy per il record giro */
+}
+
+.logo {
+  width: 400px;
+  margin: 10px;
+}
+
+.click-logo {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.click-logo:active {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px #FF0000);
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f1f;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #FF0000;
+}
+
+.race-week {
+  position: relative;
+  z-index: 2; /* Sopra ai piloti */
+  text-align: center;
+  padding: 10px 20px 0px 20px;
+  /*border-bottom: 4px solid #FF0000;  Usata come 'linea di taglio' */
+  background-color: #0d0d0d; /* opzionale */
+  overflow: hidden;
+}
+
+
+
+
+
+.socials {
+  text-align: center;
+  border-top: 4px solid #FF0000;
+  padding: 20px;
+}
+
+.icons img {
+  width: 40px;
+  margin: 10px;
+  transition: transform 0.3s;
+}
+
+.icons img:hover {
+  transform: scale(1.2);
+}
+
+.countdown-section {
+  position: relative;
+  color: #fff;
+  padding: 0 2rem 2rem 2rem; /* Nessun padding top */
+  text-align: center;
+  border-radius: 8px;
+  margin: 0 auto 2rem auto; /* Rimuovi margin-top */
+  max-width: 700px;
+}
+
+.background-image {
+  background-image: url('images/circuits/zandvoort1.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 725px; /* <–– Limita a quanto ti serve */
+  width: 100%;
+  z-index: -2;
+  max-height: 100%;
+}
+
+.background-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+  z-index: -1;
+}
+
+.driver-zone {
+  position: absolute;
+  bottom: -600px;
+  display: flex;
+  gap: 0px;
+  z-index: 3; /* sotto .race-week */
+}
+
+.driver-zone.left {
+  left: -35px;
+  padding-left: 0;
+  
+}
+
+.driver-zone img[alt="Driver1L"] {
+  margin-right: -50px;
+}
+
+.driver-zone img:hover[alt="Driver1L"] {
+  filter: drop-shadow(0 0 20px #E8002D);
+}
+
+.driver-zone img[alt="Driver2L"] {
+  margin-left: -60px;
+}
+
+.driver-zone img:hover[alt="Driver2L"] {
+  filter: drop-shadow(0 0 20px #64C4FF);
+}
+
+.driver-zone img[alt="Driver1R"] {
+  margin-right: -50px;
+}
+
+.driver-zone img:hover[alt="Driver1R"] {
+  filter: drop-shadow(0 0 20px #FF8000);
+}
+
+.driver-zone img[alt="Driver2R"] {
+  margin-left: -60px;
+}
+
+.driver-zone img:hover[alt="Driver2R"] {
+  filter: drop-shadow(0 0 20px #3671C6);
+}
+
+
+.driver-zone.right {
+  right: -35px;
+  padding-right: 0;
+}
+
+.driver-zone img {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 1150px;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+  transition: transform 0.3s ease;
+}
+
+.driver-zone img:hover {
+  transform: scale(1.05);
+  
+}
+
+/* Social section compensazione spazio */
+.socials {
+  position: relative; /* oppure absolute/fixed se necessario */
+  z-index: 4; /* più alto dei piloti e della race-week */
+  background-color: #0d0d0d; /* per assicurarti che “copra” davvero */
+}
+
+
+.race-red,
+.race-white {
+  line-height: 1.1;
+  letter-spacing: -2px;
+  font-size: 7rem;
+}
+
+.countdown-content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.countdown-content h3 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.countdown-content p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+#countdown {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Thin.ttf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Heavy.ttf') format('truetype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+
+/* --- Sezione principale --- */
+.classifiche-slider {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.classifiche-slider h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Tab buttons --- */
+.slider-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: #e0e0e0;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.tab:hover {
+  background: #cfcfcf;
+}
+
+.tab.active {
+  background: #ff2a2a;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 42, 42, 0.5);
+}
+
+/* --- Contenuto Classifica --- */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.ranking-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ranking-list li {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-left: 5px solid #ff2a2a;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  transition: transform 0.2s;
+  text-shadow: 0 0 2px rgba(0,0,0,0.6);
+  max-height: none;
+  overflow: visible;
+}
+
+.ranking-list li:hover {
+  transform: translateY(-2px);
+}
+
+.ranking-list .pos {
+  width: 60px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0;
+  font-size: 2.3rem;
+  font-weight: 800;
+}
+
+.ranking-list .team-logo {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.ranking-list .team-name {
+    margin-left: 2rem;
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.ranking-list .driver-name {
+    margin-left: 2rem;
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+.ranking-list .team-name-driver {
+    margin-right: 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.ranking-list .driver-points {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.ranking-list .team-points {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/* --- Animazione tab --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Mobile responsive --- */
+@media (max-width: 600px) {
+  .slider-tabs {
+    flex-direction: column;
+  }
+
+  .ranking-list li {
+    font-size: 0.9rem;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+}
+
+
+
+.mclaren { background: #FF8000; color: white; border-left-color: #fff; }
+.redbull { background: #3671C6; color: white; border-left-color: #ffcc00; }
+.ferrari { background: #E8002D; color: white; border-left-color: #fff; }
+.mercedes { background: #27F4D2; color: black; border-left-color: #fff; }
+.williams { background: #64C4FF; color: white; border-left-color: #00b7c2; }
+.sauber { background: #52E252; color: black; border-left-color: #fff; }
+.haas { background: #B6BABD; color: black; border-left-color: #000; }
+.alpine { background: #FF87BC; color: white; border-left-color: #ff4ef1; }
+.astonmartin { background: #229971; color: white; border-left-color: #fff; }
+.rb { background: #6692FF; color: white; border-left-color: #ffcc00; }
+
+
