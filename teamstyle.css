@@ -1,0 +1,333 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Rohn Rounded', sans-serif;
+  font-weight: 400;
+  background: #0d0d0d;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+h1 {
+  font-weight: 900; /* Black */
+}
+
+.race-week h1 {
+  margin-bottom: -30px;
+  margin-top: 30px;
+}
+
+
+h3 {
+  font-weight: 500; /* Medium */
+}
+
+p {
+  font-weight: 400; /* Regular */
+}
+
+.race-red {
+  color: #FF0000;
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+.race-white {
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+.logo {
+  width: 400px;
+  margin: 10px;
+}
+
+.click-logo {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.click-logo:active {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px #FF0000);
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f1f;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: #FF0000;
+}
+
+header {
+  z-index: 4;
+}
+
+.race-week {
+  position: relative;
+  z-index: 2; /* Sopra ai piloti */
+  text-align: center;
+  padding: 10px 20px 0px 20px;
+  /*border-bottom: 4px solid #FF0000;  Usata come 'linea di taglio' */
+  background-color: #0d0d0d; /* opzionale */
+  overflow: hidden;
+  height: 530px;
+}
+
+
+
+
+
+
+.socials {
+  text-align: center;
+  border-top: 4px solid #FF0000;
+  padding: 20px;
+}
+
+.icons img {
+  width: 40px;
+  margin: 10px;
+  transition: transform 0.3s;
+}
+
+.icons img:hover {
+  transform: scale(1.2);
+}
+
+.driver-zone {
+  position: absolute;
+  bottom: -1180px;
+  display: flex;
+  gap: 0px;
+  z-index: 3; /* sotto .race-week */
+}
+
+.driver-zone img[alt="DriverL"] {
+  margin-right: -50px;
+}
+
+.driver-zone img[alt="DriverR"] {
+  margin-right: -50px;
+}
+
+/* McLaren - arancione */
+.driver-image.mclaren:hover {
+  filter: drop-shadow(0 0 20px #ff8000);
+}
+
+/* Ferrari - rosso */
+.driver-image.ferrari:hover {
+  filter: drop-shadow(0 0 20px #E8002D);
+}
+
+/* Red Bull - blu */
+.driver-image.red_bull:hover {
+  filter: drop-shadow(0 0 20px #3671C6);
+}
+
+/* Mercedes - turchese */
+.driver-image.mercedes:hover {
+  filter: drop-shadow(0 0 20px #27F4D2);
+}
+
+.driver-image.alpine:hover {
+  filter: drop-shadow(0 0 20px #FF87BC);
+}
+
+.driver-image.aston_martin:hover {
+  filter: drop-shadow(0 0 20px #229971);
+}
+
+.driver-image.haas:hover {
+  filter: drop-shadow(0 0 20px #B6BABD);
+}
+
+.driver-image.rb:hover {
+  filter: drop-shadow(0 0 20px #6692FF);
+}
+
+.driver-image.sauber:hover {
+  filter: drop-shadow(0 0 20px #52E252);
+}
+
+.driver-image.williams:hover {
+  filter: drop-shadow(0 0 20px #64C4FF);
+}
+
+/* Puoi continuare per tutti i team disponibili */
+
+
+
+.driver-zone.right {
+  
+  right: -15px;
+  padding-right: 0;
+}
+
+.driver-zone.left {
+  left: -15px;
+  padding-left: 0;
+}
+
+
+
+.driver-zone img {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 1700px;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+  transition: transform 0.3s ease;
+}
+
+.driver-zone img:hover {
+  transform: scale(1.05);
+  
+}
+
+/* Social section compensazione spazio */
+.socials {
+  position: relative; /* oppure absolute/fixed se necessario */
+  z-index: 4; /* più alto dei piloti e della race-week */
+  background-color: #0d0d0d; /* per assicurarti che “copra” davvero */
+}
+
+
+.race-red,
+.race-white {
+  line-height: 1.1;
+  letter-spacing: -2px;
+  font-size: 7rem;
+}
+
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Thin.ttf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Heavy.ttf') format('truetype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Rohn Rounded';
+  src: url('images/fonts/RohnRounded-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+
+.team-color.mclaren { background: #FF8000; color: white; border-left-color: #fff; }
+.team-color.red_bull { background: #3671C6; color: white; border-left-color: #ffcc00; }
+.team-color.ferrari { background: #E8002D; color: white; border-left-color: #fff; }
+.team-color.mercedes { background: #27F4D2; color: black; border-left-color: #fff; }
+.team-color.williams { background: #64C4FF; color: white; border-left-color: #00b7c2; }
+.team-color.sauber { background: #52E252; color: black; border-left-color: #fff; }
+.team-color.haas { background: #B6BABD; color: black; border-left-color: #000; }
+.team-color.alpine { background: #FF87BC; color: white; border-left-color: #ff4ef1; }
+.team-color.aston_martin { background: #229971; color: white; border-left-color: #fff; }
+.team-color.rb { background: #6692FF; color: white; border-left-color: #ffcc00; }
+
+.team-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.team-logo img {
+  height: 120px;
+}
+
+.nav-button {
+  position:absolute;
+  background-color: #FF0000;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.nav-button:hover {
+  background-color: #cc0000;
+}
+
+.nav-button.left {
+  top: 29rem;
+  left: 795px;
+}
+
+.nav-button.right {
+  top: 29rem;
+  right: 795px;
+}
+
+.slide.active {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.driver {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 4rem;
+}

@@ -1,0 +1,142 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squadre</title>
+    <link rel="stylesheet" href="teamstyle.css" />
+    <link rel="shortcut icon" href="images/browsericon.ico" />
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo Paddock Vibes" class="logo click-logo" id="logo"  />
+        <nav>
+        <ul>
+            <li><a href="teams.html">Squadre</a></li>
+            <li><a href="classifiche.html">Classifiche</a></li>
+            <li><a href="#">Pagelle</a></li>
+            <li><a href="#">Collaborazioni</a></li>
+            <li><a href="#">Contatti</a></li>
+        </ul>
+        </nav>
+    </header>
+
+
+    <section class="race-week">
+    <div class="slider-track">
+      <div class="slide active">
+        <div class="driver left">
+          <h3></h3>
+          <p><strong></strong></p>
+        </div>
+        <div class="driver-zone left">
+          <img src="" alt="DriverR" />
+        </div>
+        <div class="team-logo">
+          <img src="" alt="Logo Team" />
+        </div>
+        <div class="driver-zone right">
+          <img src="" alt="DriverL" />
+        </div>
+        <div class="driver right">
+          <h3></h3>
+          <p><strong></strong></p>
+        </div>
+      </div>
+    </div>
+    <button class="nav-button left">&lt;</button>
+    <button class="nav-button right">&gt;</button>
+  </section>
+
+    
+
+
+  <section class="socials">
+    <h2>I nostri social</h2>
+    <div class="icons">
+      <a href="https://www.facebook.com/share/19MhxU8ckd/?mibextid=wwXIfr"><img src="images/socialnetwork/facebook.png" alt="Facebook" /></a>
+      <a href="https://www.instagram.com/paddockvibesofficial/"><img src="images/socialnetwork/instagram.png" alt="Instagram" /></a>
+      <a href="https://www.threads.com/@paddockvibesofficial"><img src="images/socialnetwork/threads.png" alt="Threads" /></a>
+      <a href="https://www.tiktok.com/@paddockvibesofficial"><img src="images/socialnetwork/tiktok.png" alt="TikTok" /></a>
+    </div>
+  </section>
+</body>
+
+<script>
+    const teams = [
+  "mclaren", "ferrari", "red_bull", "mercedes", "williams", "sauber",
+  "rb", "aston_martin", "haas", "alpine"
+];
+let currentIndex = 0;
+
+async function loadTeam(teamId) {
+  const response = await fetch(`https://f1api.dev/api/current/teams/${teamId}/drivers`);
+  const data = await response.json();
+
+  let driverRight, driverLeft;
+
+  // Se il team è Alpine e ha almeno 3 piloti
+  if (teamId === "alpine" && data.drivers.length >= 3) {
+    driverRight = data.drivers[0].driver; // primo pilota
+    driverLeft = data.drivers[2].driver;  // terzo pilota
+  } else {
+    driverRight = data.drivers[0].driver;
+    driverLeft = data.drivers[1].driver;
+  }
+
+  // Aggiorna LEFT driver
+  const numeroLeft = numeriCorretti[driverLeft.driverId] || driverLeft.number;
+  document.querySelector(".driver.left h3").textContent = numeroLeft;
+  document.querySelector(".driver.left strong").textContent = driverLeft.surname;
+  document.querySelector(".driver.left p").innerHTML =
+    `${driverLeft.name}<br><strong class="team-color ${teamId}">${driverLeft.surname}</strong>`;
+  document.querySelector(".driver.left h3").className = `team-color ${teamId}`;
+  document.querySelector(".driver-zone.left img").src = `images/drivers/right/${driverLeft.surname}.png`;
+  document.querySelector(".driver-zone.left img").className = `driver-image ${teamId}`;
+
+  // Aggiorna RIGHT driver
+  const numeroRight = numeriCorretti[driverRight.driverId] || driverRight.number;
+  document.querySelector(".driver.right h3").textContent = numeroRight;
+  document.querySelector(".driver.right strong").textContent = driverRight.surname;
+  document.querySelector(".driver.right p").innerHTML =
+    `${driverRight.name}<br><strong class="team-color ${teamId}">${driverRight.surname}</strong>`;
+  document.querySelector(".driver.right h3").className = `team-color ${teamId}`;
+  document.querySelector(".driver-zone.right img").src = `images/drivers/left/${driverRight.surname}.png`;
+  document.querySelector(".driver-zone.right img").className = `driver-image ${teamId}`;
+
+  // Logo team
+  document.querySelector(".team-logo img").src = `images/teams/teamsection/${teamId}.png`;
+}
+
+
+document.querySelector(".nav-button.right").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % teams.length;
+  loadTeam(teams[currentIndex]);
+});
+
+document.querySelector(".nav-button.left").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + teams.length) % teams.length;
+  loadTeam(teams[currentIndex]);
+});
+
+// Inizializza
+loadTeam(teams[currentIndex]);
+
+
+const numeriCorretti = {
+  "max_verstappen": 1,
+  // altri piloti se necessario
+};
+
+function getNumero(pilotaId, numeroApi) {
+  return numeriCorretti[pilotaId] || numeroApi;
+}
+
+document.getElementById("logo").addEventListener("click", function () {
+  window.location.href = "index.html";
+});
+
+</script>
+
+</html>
